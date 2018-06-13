@@ -1,0 +1,1 @@
+On grib layout use grid-out-rows: minmax(x, y); // increases cell size if content is bigger than min cell size.

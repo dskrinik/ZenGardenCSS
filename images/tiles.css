@@ -1,0 +1,368 @@
+/*Grid container for tiles*/
+
+.main.supporting {
+  display: grid;
+  align-items: flex-start;
+  */
+  /* tile sizes */
+  grid-template-columns: 120px 120px;
+  grid-template-rows: 120px 120px 120px;
+  grid-gap: 10px;
+  /* margin-left: 80px; */
+  position: absolute;
+  bottom: 10%;
+}
+
+/* Grid item for 1st tile */
+
+/* here i can add perspective */
+
+.explanation {
+  /* grid-columns and rows are set to 1 and span 1 track by default */
+  font-size: 1em;
+  background: rgba(204, 204, 0, 1);
+  color: white;
+  content: "Explanation";
+}
+
+/*Grid item for 2nd tile */
+
+.participation {
+  grid-column: 2;
+  /*spans 1 column track by default*/
+  /*starts at 1 and spans 1 row track by default */
+  font-size: 1em;
+  background: rgba(202, 149, 240, 0.27);
+  color: white;
+  content: "Participation";
+}
+
+/* Grid item for 3rd tile */
+
+.benefits {
+  grid-row: 2;
+  font-size: 1em;
+  background: rgba(202, 149, 240, 0.27);
+  color: white;
+  content: "Benefits";
+}
+
+/* Grid item for 4th tile */
+
+.requirements {
+  grid-row: 2;
+  grid-column: 2;
+  font-size: 1em;
+  background: rgba(202, 149, 240, 0.27);
+  color: white;
+  content: "Requirements";
+}
+
+/* Grid item for 5th tile */
+
+footer {
+  grid-row: 3;
+  font-size: 1em;
+  background: rgba(202, 149, 240, 0.27);
+  color: white;
+  content: "Sources";
+}
+
+/* each flex item (tile) becomes a flex container for it's content
+The content become the pop-up paragraphs */
+
+.explanation, .participation, .benefits, .requirements, footer {
+  display: flex;
+  justify-content: flex-start;
+  /*default - starts containers from left*/
+  flex-direction: column;
+  max-width: 120px;
+  max-height: 120px;
+  position: relative;
+}
+
+/* Tile slide-and-fade right away */
+
+/* Add each tile animation delay, tile name and logo */
+
+.explanation::before {
+  animation: slideAndFade1 8s .5s infinite ease-in-out forwards;
+  background: linear-gradient(to bottom, rgba(204, 204, 0, 0.2), rgba(204, 204, 0, 0.6)), url("../Zengarden/images/SettingsIcon1@2x.png"), no-repeat bottom;
+  content: "Explanation";
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.participation::before {
+  animation: slideAndFade2 18s 2s infinite ease-in-out forwards;
+  background: linear-gradient(to bottom, rgba(0, 51, 204, 0.2), rgba(0, 51, 204, 0.6)), url("../Zengarden/images/Arrow1@2x.png"), no-repeat bottom;
+  content: "Participation";
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.benefits::before {
+  animation: slideAndFade3 18s .1s infinite ease-in-out forwards;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6)), url("../Zengarden/images/WindowsIcon2@2x.png"), no-repeat bottom;
+  content: "Benefits";
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.requirements::before {
+  animation: slideAndFade4 20s 2.5s infinite ease-in-out forwards;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6)), url("../Zengarden/images/SettingsIcon1@2x.png"), no-repeat bottom;
+  content: "Requirements";
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+footer::before {
+  animation: slideAndFade5 10s 5s infinite ease-in forwards;
+  background: linear-gradient(to bottom, rgba(255, 100, 0, 0.2), rgba(255, 100, 0, 0.6)), url("../Zengarden/images/SettingsIcon1@2x.png"), no-repeat bottom;
+  content: "Sources";
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+@keyframes slideAndFade1 {
+  0% {
+    opacity: 0;
+    transform: translateY(-1rem);
+  }
+  5% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  95% {
+    content: url("../Zengarden/images/tileFacePicture.png");
+    text-align: center;
+    top: auto;
+  }
+}
+
+@keyframes slideAndFade2 {
+  0% {
+    opacity: 0;
+    transform: translateY(-1rem);
+  }
+  5% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  95% {
+    content: url("../Zengarden/images/tileFacePicture.png");
+    text-align: center;
+    top: auto;
+  }
+}
+
+@keyframes slideAndFade3 {
+  0% {
+    opacity: 0;
+    transform: translateY(-1rem);
+  }
+  5% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  95% {
+    content: url("../Zengarden/images/tileFacePicture.png");
+    text-align: center;
+    top: auto;
+  }
+}
+
+@keyframes slideAndFade4 {
+  0% {
+    opacity: 0;
+    transform: translateY(-1rem);
+  }
+  5% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  95% {
+    content: url("../Zengarden/images/tileFacePicture2.png");
+    text-align: center;
+    top: auto;
+  }
+}
+
+@keyframes slideAndFade5 {
+  0% {
+    opacity: 0;
+    transform: translateY(-1rem);
+  }
+  5% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  95% {
+    content: url("../Zengarden/images/tileFacePicture.png");
+    text-align: center;
+    top: auto;
+  }
+}
+
+/* Breathing effect on hover, before clicking the tile*/
+
+.explanation:hover::before, .participation:hover::before, .benefits:hover::before, .requirements:hover::before, footer:hover::before {
+  animation: breathing 900ms ease-in-out 10ms;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+  z-index: 1;
+}
+
+@keyframes breathing {
+  0% {
+    transform: scale(1);
+  }
+  85%-90% {
+    opacity: 0.7;
+  }
+  100% {
+    background-color: rgba(100, 100, 100, 1);
+    opacity: 1;
+    transform: scale(0.98);
+  }
+}
+
+/* white border at hover - separated from breathing effect*/
+
+.explanation:hover, .participation:hover, .benefits:hover, .requirements:hover, footer:hover {
+  border-style: solid;
+  border-color: white;
+  border-width: .07em;
+}
+
+/*pop-up paragraphs styles*/
+
+.benefits *, footer * {
+  background: black;
+  color: white;
+  flex: 1;
+  min-width: 200px;
+  height: auto;
+  align-self: flex-start;
+  visibility: hidden;
+  z-index: 1;
+  margin: .05px;
+}
+
+/* footer's pop up paragraphs are too short */
+
+footer * {
+  min-height: 40px;
+}
+
+/*pop-up paragraphs styles - wide ones*/
+
+.explanation *, .participation *, .requirements * {
+  background: black;
+  color: white;
+  flex: 1;
+  min-width: 400px;
+  /*must have*/
+  height: auto;
+  align-self: flex-start;
+  visibility: hidden;
+  z-index: 1;
+  margin: .05px;
+}
+
+/* Before click/unclick effets are applied, all pop-up elements are moved */
+
+.explanation *, .participation *, .benefits *, .requirements *, footer * {
+  transform: translate(40px, -325px);
+}
+
+/*Click/Unclick effect*/
+
+/*Include .page-wrapper(entire body) for click/unclick*/
+
+.page-wrapper .explanation *, .page-wrapper .participation *, .page-wrapper .benefits *, .page-wrapper .requirements *, .page-wrapper footer * {
+  color: white;
+  visibility: hidden;
+  /*Click*/
+  -webkit-transition: all 0s 1000s;
+  transition: all 0s 1000s;
+  position: relative;
+}
+
+/* Click - top-left tile */
+
+.explanation:active * {
+  visibility: visible;
+  transform: translate(-36px, -55px);
+  transition: all 0s;
+}
+
+/* Click - top-right tile */
+
+.participation:active * {
+  visibility: visible;
+  transform: translate(-113px, -55px);
+  transition: all 0s;
+}
+
+/* Click - mid-left tile */
+
+.benefits:active * {
+  visibility: visible;
+  transform: translate(-36px, -150px);
+  transition: all 0s;
+}
+
+/* Click - mid-right tile - phone/tablet */
+
+.requirements:active * {
+  visibility: visible;
+  transform: translate(-113px, -240px);
+  transition: all 0s;
+}
+
+/* Click - mid-right tile - desctop */
+
+@media only screen and (max-width: 480px) {
+  .main.supporting {
+    visibility: visible;
+    transform: translate(-113px, -233px);
+    transition: all 0s;
+  }
+}
+
+/* Click - bottom-left tile */
+
+footer:active * {
+  visibility: visible;
+  transform: translate(-36px, -60px);
+  transition: all 0s;
+}
+
+/*Unclick*/
+
+.page-wrapper:active .explanation *, .page-wrapper:active .participation *, .page-wrapper:active .benefits *, .page-wrapper:active .requirements *, .page-wrapper:active footer * {
+  transition-property: none !important;
+}

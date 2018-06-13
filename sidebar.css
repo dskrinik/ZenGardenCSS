@@ -1,0 +1,259 @@
+/*Sidebar (.intro) Grid Cell Styles*/
+
+.intro {
+  background: black;
+  color: white;
+}
+
+/* Hamburger Icon -.role-banner */
+
+[role="banner"] {
+  display: inline-block;
+  margin: 0;
+  border-collapse: collapse;
+  width: auto;
+  overflow: hidden;
+  white-space: nowrap;
+  color: white;
+  /* width: 33px; */
+}
+
+[role="banner"] h1, [role="banner"] h2 {
+  display: inline-block;
+  margin: 0;
+  vertical-align: top;
+  text-align: center;
+}
+
+[role="banner"] h1 {
+  visibility: hidden;
+  /* distance between the icon and rolling text */
+  width: 2em;
+}
+
+[role="banner"] h1::before {
+  content: url("images/HamburgerIcon1.png");
+  visibility: visible;
+  line-height: initial;
+}
+
+[role="banner"] h1::before, [role="banner"] h2 {
+  text-align: left;
+  display: inherit;
+  margin-top: .6em;
+  border: 0;
+  line-height: 3em;
+}
+
+[role="banner"] h2 {
+  display: none;
+}
+
+[role='banner']:hover h2 {
+  display: inline-block;
+}
+
+/*Change Icon background start*/
+
+[role='banner'] h1::before {
+  transition: content 1s;
+}
+
+[role='banner']:hover h1::before {
+  content: url("images/HamburgerIcon2.png");
+}
+
+/*Change Icon background end*/
+
+/* Decorate the rolling text */
+[role="banner"] h2 {
+  color: pink;
+  margin: auto;
+  font-weight: lighter;
+  font-size: 1.5em;
+  font-style: italic;
+  font-family: serif;
+  animation: rollOut 2s steps(50, end);
+}
+[role="banner"] h2::first-letter {
+  color: white;
+  font-size: 2em;
+}
+
+@keyframes rollOut {
+  from {
+    width: 0;
+  }
+  to {
+    width: 16em;
+  }
+}
+
+/* end *h2 rolls out */
+
+/* Settings Icon - .summary */
+
+/*pop-up paragraphs go flex container*/
+
+.summary {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  max-width: 600px;
+  /* height property may need to be responsive */
+  max-height: 33px;
+  /*center settings icon*/
+  position: relative;
+  top: 30%;
+}
+
+/*flex items styles*/
+
+.summary>p {
+  padding: .1em;
+  margin: .05em;
+  font-size: 1em;
+  background: black;
+  color: white;
+  flex: 1;
+  min-width: 200px;
+  /*must have*/
+  align-self: flex-start;
+  z-index: 1;
+}
+
+/* Icon background change */
+
+.summary::before {
+  background: black;
+  content: url("images/SettingsIcon1.png");
+  visibility: visible;
+}
+
+/* gray on click */
+
+.summary:hover::before {
+  content: url("images/SettingsIcon2.png");
+}
+
+/* Icon background change end*/
+
+/*Click/Unclick effect*/
+
+/*include .page-wrapper(entire body) for click/unclick*/
+
+.page-wrapper .summary>p {
+  color: white;
+  visibility: hidden;
+  /*Click*/
+  -webkit-transition: all 0s 1000s;
+  transition: all 0s 1000s;
+  position: relative;
+}
+
+/*Click*/
+
+.summary:active>p {
+  visibility: visible;
+  transform: translate(43px, -40px);
+  transition: all 0s;
+}
+
+/*Unclick*/
+
+.page-wrapper:active .summary>p {
+  transition-property: none !important;
+}
+
+/* Power button -Arrow - .preamble*/
+
+/*pop-up paragraphs go flex container*/
+
+.preamble {
+  display: flex;
+  justify-content: flex-start;
+  /*default - starts containers from left*/
+  flex-direction: column;
+  max-width: 400px;
+  /* heigh property may need to be responsive */
+  max-height: 50px;
+  /*center settings icon*/
+  position: absolute;
+  bottom: 50px;
+}
+
+/*flex items styles*/
+
+.preamble * {
+  padding: .1em;
+  margin: .05em;
+  font-size: 1em;
+  background: black;
+  color: white;
+  flex: 1;
+  min-width: 200px;
+  /*must have*/
+  align-self: flex-start;
+  z-index: 1;
+}
+
+/* Icon background change */
+
+.preamble::before {
+  background: black;
+  content: url("images/Arrow1.png");
+  visibility: visible;
+}
+
+/* gray on click */
+
+.preamble:hover::before {
+  content: url("images/Arrow2.png");
+}
+
+/* Icon background change end*/
+
+/*click/unclick*/
+
+/*include .page-wrapper(entire body) for click/unclick*/
+
+.page-wrapper .preamble>p, .page-wrapper .preamble>h3 {
+  color: white;
+  visibility: hidden;
+  /*mimic click*/
+  -webkit-transition: all 0s 1000s;
+  transition: all 0s 1000s;
+  position: relative;
+}
+
+/*Icon*/
+
+.preamble::before {
+  visibility: visible;
+  line-height: initial;
+  position: absolute;
+  bottom: 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* before click/unclick effets are applied, all pop-up elements are moved */
+
+.preamble>p, .preamble>h3 {
+  transform: translate(43px, -160px);
+}
+
+/*click*/
+
+.preamble:active>p, .preamble:active>h3 {
+  visibility: visible;
+  /* transform: translate(35px, -50px); */
+  transition: all 0s;
+}
+
+/*unclick*/
+
+.page-wrapper:active .preamble>p, .page-wrapper:active .preamble>h3 {
+  transition-property: none !important;
+}
