@@ -1,10 +1,7 @@
-/* Taskbar has to be its own container*/
-
-/*.wrapper class is inside the sidebar class*/
-
-/*Taskbar Flexbox container - .wrapper*/
-
-/* Flex container for StartBt, Cornata, and Time - .wrapper */
+/* .wrapper class is inside the .sidebar class.
+  Taskbar has to be a flexbox container.
+  Therefore .wrapper becomes a flex container for StartBt, Cornata, and Time flex items.
+  Moveover, StartBt, Cortana, and Time have to become flexbox containers themselves */
 
 .wrapper {
   display: flex;
@@ -12,7 +9,7 @@
   flex-wrap: wrap;
 }
 
-/*Taskbar flexbox items*/
+/* Taskbar flexbox items */
 
 .wrapper>div {
   margin-right: .06em;
@@ -24,9 +21,8 @@
   max-height: 40px;
 }
 
-/* select each flex item individually */
-
-/* StartBt flex item styles*/
+/* Select each flex item individually */
+/* Start with StartBt flex item styles */
 
 .wrapper div:nth-child(1) {
   flex: 6;

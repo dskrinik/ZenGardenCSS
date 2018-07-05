@@ -1,21 +1,21 @@
-/*Grid container for tiles*/
+/* Styling the grid item for Tiles = .main.supporting.
+  The Tiles grid item becomes its own grid layout.
+  Each tile becomes an item.
+  Each tile item becomes a flex containers, whose contents are the popup paragraphs */
+
 
 .main.supporting {
   display: grid;
-  align-items: flex-start;
-  */
+  /* align-items: flex-start; */
   /* tile sizes */
   grid-template-columns: 120px 120px;
   grid-template-rows: 120px 120px 120px;
   grid-gap: 10px;
-  /* margin-left: 80px; */
   position: absolute;
   bottom: 10%;
 }
 
 /* Grid item for 1st tile */
-
-/* here i can add perspective */
 
 .explanation {
   /* grid-columns and rows are set to 1 and span 1 track by default */
@@ -29,8 +29,6 @@
 
 .participation {
   grid-column: 2;
-  /*spans 1 column track by default*/
-  /*starts at 1 and spans 1 row track by default */
   font-size: 1em;
   background: rgba(202, 149, 240, 0.27);
   color: white;
@@ -68,13 +66,12 @@ footer {
   content: "Sources";
 }
 
-/* each flex item (tile) becomes a flex container for it's content
-The content become the pop-up paragraphs */
+/* Turn tiles (grid items) into flex containers, whose contents are the popup paragraphs */
 
 .explanation, .participation, .benefits, .requirements, footer {
   display: flex;
   justify-content: flex-start;
-  /*default - starts containers from left*/
+  /* default - starts containers from left */
   flex-direction: column;
   max-width: 120px;
   max-height: 120px;
@@ -86,11 +83,13 @@ The content become the pop-up paragraphs */
 /* Add each tile animation delay, tile name and logo */
 
 .explanation::before {
+  -webkit-animation: slideAndFade1 8s .5s infinite ease-in-out forwards;
   animation: slideAndFade1 8s .5s infinite ease-in-out forwards;
-  background: linear-gradient(to bottom, rgba(204, 204, 0, 0.2), rgba(204, 204, 0, 0.6)), url("../Zengarden/images/SettingsIcon1@2x.png"), no-repeat bottom;
+  background: linear-gradient(to bottom, rgba(204, 204, 0, 0.2), rgba(204, 204, 0, 0.6)), url("../Zengarden/images/explanationIcon.png"), no-repeat bottom;
   content: "Explanation";
   background-size: cover;
   position: absolute;
+  /* slide-in background image to fit in the element */
   top: 0;
   right: 0;
   bottom: 0;
@@ -98,8 +97,9 @@ The content become the pop-up paragraphs */
 }
 
 .participation::before {
+  -webkit-animation: slideAndFade2 18s 2s infinite ease-in-out forwards;
   animation: slideAndFade2 18s 2s infinite ease-in-out forwards;
-  background: linear-gradient(to bottom, rgba(0, 51, 204, 0.2), rgba(0, 51, 204, 0.6)), url("../Zengarden/images/Arrow1@2x.png"), no-repeat bottom;
+  background: linear-gradient(to bottom, rgba(0, 51, 204, 0.2), rgba(0, 51, 204, 0.6)), url("../Zengarden/images/participationIcon.png"), no-repeat bottom;
   content: "Participation";
   background-size: cover;
   position: absolute;
@@ -110,8 +110,9 @@ The content become the pop-up paragraphs */
 }
 
 .benefits::before {
+  -webkit-animation: slideAndFade3 18s .1s infinite ease-in-out forwards;
   animation: slideAndFade3 18s .1s infinite ease-in-out forwards;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6)), url("../Zengarden/images/WindowsIcon2@2x.png"), no-repeat bottom;
+  background: linear-gradient(to bottom, rgba(255, 0, 0, 0.2), rgba(255, 0, 0, 0.6)), url("../Zengarden/images/storeIcon.png"), no-repeat bottom;
   content: "Benefits";
   background-size: cover;
   position: absolute;
@@ -122,8 +123,9 @@ The content become the pop-up paragraphs */
 }
 
 .requirements::before {
+  -webkit-animation: slideAndFade4 20s 2.5s infinite ease-in-out forwards;
   animation: slideAndFade4 20s 2.5s infinite ease-in-out forwards;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6)), url("../Zengarden/images/SettingsIcon1@2x.png"), no-repeat bottom;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6)), url("../Zengarden/images/requirementsIcon2.png"), no-repeat bottom;
   content: "Requirements";
   background-size: cover;
   position: absolute;
@@ -134,8 +136,9 @@ The content become the pop-up paragraphs */
 }
 
 footer::before {
+  -webkit-animation: slideAndFade5 10s 5s infinite ease-in forwards;
   animation: slideAndFade5 10s 5s infinite ease-in forwards;
-  background: linear-gradient(to bottom, rgba(255, 100, 0, 0.2), rgba(255, 100, 0, 0.6)), url("../Zengarden/images/SettingsIcon1@2x.png"), no-repeat bottom;
+  background: linear-gradient(to bottom, rgba(255, 100, 0, 0.2), rgba(255, 100, 0, 0.6)), url("../Zengarden/images/sourcesIcon.png"), no-repeat bottom;
   content: "Sources";
   background-size: cover;
   position: absolute;
@@ -143,6 +146,25 @@ footer::before {
   right: 0;
   bottom: 0;
   left: 0;
+}
+@-webkit-keyframes slideAndFade1 {
+  0% {
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    -webkit-transform: translateY(-1rem);
+    transform: translateY(-1rem);
+  }
+  5% {
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  95% {
+    content: url("../Zengarden/images/face2.png");
+    text-align: center;
+    top: auto;
+  }
 }
 
 @keyframes slideAndFade1 {
@@ -155,7 +177,7 @@ footer::before {
     transform: translateY(0);
   }
   95% {
-    content: url("../Zengarden/images/tileFacePicture.png");
+    content: url("../Zengarden/images/face2.png");
     text-align: center;
     top: auto;
   }
@@ -171,12 +193,50 @@ footer::before {
     transform: translateY(0);
   }
   95% {
-    content: url("../Zengarden/images/tileFacePicture.png");
+    content: url("../Zengarden/images/face1.png");
+    text-align: center;
+    top: auto;
+  }
+}
+@-webkit-keyframes slideAndFade2 {
+  0% {
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    -webkit-transform: translateY(-1rem);
+    transform: translateY(-1rem);
+  }
+  5% {
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  95% {
+    content: url("../Zengarden/images/face1.png");
     text-align: center;
     top: auto;
   }
 }
 
+@-webkit-keyframes slideAndFade3 {
+  0% {
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    -webkit-transform: translateY(-1rem);
+    transform: translateY(-1rem);
+  }
+  5% {
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  95% {
+    content: url("../Zengarden/images/face5.png");
+    text-align: center;
+    top: auto;
+  }
+}
 @keyframes slideAndFade3 {
   0% {
     opacity: 0;
@@ -187,12 +247,31 @@ footer::before {
     transform: translateY(0);
   }
   95% {
-    content: url("../Zengarden/images/tileFacePicture.png");
+    content: url("../Zengarden/images/face5.png");
     text-align: center;
     top: auto;
   }
 }
 
+@-webkit-keyframes slideAndFade4 {
+  0% {
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    -webkit-transform: translateY(-1rem);
+    transform: translateY(-1rem);
+  }
+  5% {
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  95% {
+    content: url("../Zengarden/images/face7.png");
+    text-align: center;
+    top: auto;
+  }
+}
 @keyframes slideAndFade4 {
   0% {
     opacity: 0;
@@ -203,12 +282,30 @@ footer::before {
     transform: translateY(0);
   }
   95% {
-    content: url("../Zengarden/images/tileFacePicture2.png");
+    content: url("../Zengarden/images/face7.png");
     text-align: center;
     top: auto;
   }
 }
-
+@-webkit-keyframes slideAndFade5 {
+  0% {
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    -webkit-transform: translateY(-1rem);
+    transform: translateY(-1rem);
+  }
+  5% {
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  95% {
+    content: url("../Zengarden/images/face6.png");
+    text-align: center;
+    top: auto;
+  }
+}
 @keyframes slideAndFade5 {
   0% {
     opacity: 0;
@@ -219,22 +316,37 @@ footer::before {
     transform: translateY(0);
   }
   95% {
-    content: url("../Zengarden/images/tileFacePicture.png");
+    content: url("../Zengarden/images/face6.png");
     text-align: center;
     top: auto;
   }
 }
 
-/* Breathing effect on hover, before clicking the tile*/
+/* Breathing effect on hover, before clicking the tile */
 
 .explanation:hover::before, .participation:hover::before, .benefits:hover::before, .requirements:hover::before, footer:hover::before {
-  animation: breathing 900ms ease-in-out 10ms;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  animation-fill-mode: forwards;
+  -webkit-animation: breathing 900ms ease-in-out 10ms infinite alternate forwards;
+  animation: breathing 900ms ease-in-out 10ms infinite alternate forwards;
   z-index: 1;
 }
 
+@-webkit-keyframes breathing {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  85%-90% {
+    opacity: 0.7;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+  }
+  100% {
+    background-color: rgba(100, 100, 100, 1);
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    -webkit-transform: scale(0.98);
+    transform: scale(0.98);
+  }
+}
 @keyframes breathing {
   0% {
     transform: scale(1);
@@ -249,15 +361,13 @@ footer::before {
   }
 }
 
-/* white border at hover - separated from breathing effect*/
+/* White border at hover - separated from breathing effect */
 
 .explanation:hover, .participation:hover, .benefits:hover, .requirements:hover, footer:hover {
-  border-style: solid;
-  border-color: white;
-  border-width: .07em;
+  border: .07em solid white;
 }
 
-/*pop-up paragraphs styles*/
+/* Pop-up paragraphs styles */
 
 .benefits *, footer * {
   background: black;
@@ -271,20 +381,19 @@ footer::before {
   margin: .05px;
 }
 
-/* footer's pop up paragraphs are too short */
+/* Short popup paragraphs need min height */
 
 footer * {
   min-height: 40px;
 }
 
-/*pop-up paragraphs styles - wide ones*/
+/* Wide popup paragraphs need more styles */
 
 .explanation *, .participation *, .requirements * {
   background: black;
   color: white;
   flex: 1;
-  min-width: 400px;
-  /*must have*/
+  min-width: 420px;
   height: auto;
   align-self: flex-start;
   visibility: hidden;
@@ -295,12 +404,12 @@ footer * {
 /* Before click/unclick effets are applied, all pop-up elements are moved */
 
 .explanation *, .participation *, .benefits *, .requirements *, footer * {
+  -webkit-transform: translate(40px, -325px);
   transform: translate(40px, -325px);
 }
 
-/*Click/Unclick effect*/
-
-/*Include .page-wrapper(entire body) for click/unclick*/
+/* Click/Unclick effect */
+/* Include .page-wrapper(entire body) for click/unclick */
 
 .page-wrapper .explanation *, .page-wrapper .participation *, .page-wrapper .benefits *, .page-wrapper .requirements *, .page-wrapper footer * {
   color: white;
@@ -315,7 +424,9 @@ footer * {
 
 .explanation:active * {
   visibility: visible;
+  -webkit-transform: translate(-36px, -55px);
   transform: translate(-36px, -55px);
+  -webkit-transition: all 0s;
   transition: all 0s;
 }
 
@@ -323,7 +434,9 @@ footer * {
 
 .participation:active * {
   visibility: visible;
+  -webkit-transform: translate(-113px, -55px);
   transform: translate(-113px, -55px);
+  -webkit-transition: all 0s;
   transition: all 0s;
 }
 
@@ -331,7 +444,9 @@ footer * {
 
 .benefits:active * {
   visibility: visible;
+  -webkit-transform: translate(-36px, -150px);
   transform: translate(-36px, -150px);
+  -webkit-transition: all 0s;
   transition: all 0s;
 }
 
@@ -339,7 +454,9 @@ footer * {
 
 .requirements:active * {
   visibility: visible;
+  -webkit-transform: translate(-113px, -240px);
   transform: translate(-113px, -240px);
+  -webkit-transition: all 0s;
   transition: all 0s;
 }
 
@@ -348,7 +465,9 @@ footer * {
 @media only screen and (max-width: 480px) {
   .main.supporting {
     visibility: visible;
+    -webkit-transform: translate(-113px, -233px);
     transform: translate(-113px, -233px);
+    -webkit-transition: all 0s;
     transition: all 0s;
   }
 }
@@ -357,12 +476,15 @@ footer * {
 
 footer:active * {
   visibility: visible;
+  -webkit-transform: translate(-36px, -60px);
   transform: translate(-36px, -60px);
+  -webkit-transition: all 0s;
   transition: all 0s;
 }
 
 /*Unclick*/
 
 .page-wrapper:active .explanation *, .page-wrapper:active .participation *, .page-wrapper:active .benefits *, .page-wrapper:active .requirements *, .page-wrapper:active footer * {
+  -webkit-transition-property: none !important;
   transition-property: none !important;
 }
