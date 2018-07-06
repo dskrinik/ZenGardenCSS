@@ -1,4 +1,5 @@
-/*Sidebar (.intro) Grid Cell Styles*/
+/* Sidebar (.intro) Grid Cell Styles.
+  The sidebar contains 3 elemets, the rollout text, the settings icon, and the arrow icon. */
 
 .intro {
   background: black;
@@ -26,7 +27,7 @@
 [role="banner"] h1 {
   visibility: hidden;
   /* distance between the icon and rolling text */
-  width: 2em;
+  width: 3em;
 }
 
 /* Hamburger icon setup */
@@ -69,15 +70,13 @@
 /* Decorate and animate the rolling text */
 
 [role="banner"] h2 {
-  color: black;
   margin: auto;
-  font: italic bold 1.5em serif;
+  font: italic bold 1.9em serif;
   -webkit-animation: rollOut 2s steps(50, end);
   animation: rollOut 2s steps(50, end);
-}
-[role="banner"] h2::first-letter {
-  color: white;
-  font-size: 2em;
+  /* Adding a stroke/outline to the rolling text via shadow */
+  color: rgba(255, 255, 255, 0);
+  -webkit-text-stroke: .6px white;
 }
 @-webkit-keyframes rollOut {
   from {
@@ -182,6 +181,7 @@
   margin: .05em;
   font-size: 1em;
   background: black;
+  color: black;
   min-width: 200px;
   z-index: 1;
 }
@@ -219,8 +219,8 @@
 /* before click/unclick effets are applied, all pop-up elements are moved */
 
 .preamble>p, .preamble>h3 {
-  -webkit-transform: translate(43px, -160px);
-  transform: translate(43px, -160px);
+  -webkit-transform: translate(43px, -166px);
+  transform: translate(43px, -166px);
 }
 
 /* Click */

@@ -1,15 +1,20 @@
 /* .wrapper class is inside the .sidebar class.
   Taskbar has to be a flexbox container.
-  Therefore .wrapper becomes a flex container for StartBt, Cornata, and Time flex items.
-  Moveover, StartBt, Cortana, and Time have to become flexbox containers themselves */
+  Therefore .wrapper becomes a flex container for StartBt, Cornata, and System tray flex items.
+  Moveover, StartBt, Cortana, and System tray have to become flexbox containers themselves */
 
-.wrapper {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
+  .wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
 
-/* Taskbar flexbox items */
+/* Taskbar flexbox items general styles*/
 
 .wrapper>div {
   margin-right: .06em;
@@ -17,124 +22,134 @@
   font-size: 1em;
   background: black;
   color: white;
+  -ms-flex-item-align: start;
   align-self: flex-start;
   max-height: 40px;
 }
 
-/* Select each flex item individually */
+/* Flex items individual styles */
 /* Start with StartBt flex item styles */
 
 .wrapper div:nth-child(1) {
-  flex: 6;
+-webkit-box-flex: 6;
+-ms-flex: 6;
+flex: 6;
 }
 
-/* Cortana flex item styles*/
+/* Cortana flex item styles */
 
 .wrapper div:nth-child(2) {
-  flex: 10;
+-webkit-box-flex: 10;
+-ms-flex: 10;
+flex: 10;
 }
 
-/* Time flex item styles*/
+/* System tray flex item styles */
 
 .wrapper div:nth-child(3) {
-  flex: 2;
+-webkit-box-flex: 2;
+-ms-flex: 2;
+flex: 2;
 }
 
-/*////////////////////////Styling pop-up menues of StartBt, Cortana, and Timer  */
-
+/* Turn each taskbar flex item (StartBt, Cortana, and System tray) into an flex container of its own */
 /* StartBtutton - .design-selection*/
 
-/*pop-up paragraphs go flex container*/
-
 .design-selection {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
   justify-content: flex-start;
-  /*default - starts containers from left*/
+  /* By default containers start from left */
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   max-width: 800px;
-  /* height property may need to be responsive */
+  /* Height property may need to be responsive */
   max-height: 200px;
-  /*center settings icon*/
+  /* Center settings icon */
   position: relative;
 }
 
-/*flex items styles*/
+/* Pop-up paragraphs become flex items */
+/* Flex items styles */
 
 .design-selection>h3, .design-selection>nav {
   padding: .1em;
   margin: .05em;
   font-size: 1em;
-  background: black;
+  background: rgba(102, 153, 255, .95);
   color: white;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
   flex: 1;
   width: 200px;
-  /*must have*/
+  /* Must have */
+  -ms-flex-item-align: start;
   align-self: flex-start;
 }
 
-/* Icon background change */
+/* StartBt icon background change */
 
 .design-selection::before {
   background: black;
   content: url("images/WindowsIcon1.png");
   visibility: visible;
 }
-
-/* gray on click */
-
 .design-selection:hover::before {
   content: url("images/WindowsIcon2.png");
 }
 
-/* Icon background change end*/
-
-/* before click/unclick effets are applied, all pop-up elements are moved */
+/* Before click/unclick effets are applied, all pop-up elements are moved */
 
 .design-selection>h3, .design-selection>nav {
-  transform: translate(40px, -390px);
+  -webkit-transform: translate(40px, -323px);
+  transform: translate(40px, -323px);
 }
 
-/*phone screen - before click/unclick effets are applied, all pop-up elements are moved*/
-
-/* @media only screen and (max-width: 700px) {
-    .design-selection > h3, .design-selection > nav {
-      transform: translate(40px, -487px);
-    }
-} */
-
-/*Click/Unclick effect*/
-
-/*include .page-wrapper(entire body) for click/unclick*/
+/* Click/Unclick effect */
+/* Include .page-wrapper(entire body) for click/unclick */
 
 .page-wrapper .design-selection>h3, .page-wrapper .design-selection>nav {
   color: white;
   visibility: hidden;
-  /*Click*/
+  /* Click */
   -webkit-transition: all 0s 1000s;
   transition: all 0s 1000s;
 }
 
-/*Click*/
+/* Click */
 
 .design-selection:active>h3, .design-selection:active>nav {
   visibility: visible;
+  -webkit-transition: all 0s;
   transition: all 0s;
 }
 
-/*Unclick*/
+/* Unclick */
 
 .page-wrapper:active .design-selection>h3, .page-wrapper:active .design-selection>nav {
+  -webkit-transition-property: none !important;
   transition-property: none !important;
 }
 
 /* Cortana */
-
-/*pop-up paragraphs go flex container*/
+/* Pop-up paragraphs go flex container */
 
 .design-archives {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
   justify-content: flex-start;
-  /*default - starts containers from left*/
+  /* By default containers start from left */
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   max-width: 800px;
   /* heigh property may need to be responsive */
@@ -143,21 +158,24 @@
   position: relative;
 }
 
-/*flex items styles*/
+/* Cortana flex items styles */
 
 .design-archives>h3, .design-archives>nav {
   padding: .1em;
   margin: .05em;
   font-size: 1em;
-  background: black;
+  background: rgba(102, 153, 255, .95);
   color: white;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
   flex: 1;
   min-width: 200px;
   /*must have*/
+  -ms-flex-item-align: start;
   align-self: flex-start;
 }
 
-/* Icon background change */
+/* Cortana icon background change */
 
 .design-archives::before {
   background: black;
@@ -165,100 +183,103 @@
   visibility: visible;
 }
 
-/* gray on click */
-
 .design-archives:hover::before {
   content: url("images/Cortana2.png");
 }
 
-/* Icon background change end*/
-
-/* before click/unclick effets are applied, all pop-up elements are moved */
+/* Before click/unclick effets are applied, all pop-up elements are moved */
 
 .design-archives>h3, .design-archives>nav {
-  transform: translate(40px, -160px);
+  -webkit-transform: translate(0px, -153px);
+  transform: translate(0px, -153px);
 }
 
-/*Click/Unclick effect*/
+/* Click/Unclick effect */
 
-/*include .page-wrapper(entire body) for click/unclick*/
+/* Include .page-wrapper(entire body) for click/unclick */
 
 .page-wrapper .design-archives>h3, .page-wrapper .design-archives>nav {
   color: white;
   visibility: hidden;
-  /*Click*/
+  /* Click */
   -webkit-transition: all 0s 1000s;
   transition: all 0s 1000s;
 }
 
-/*Click*/
+/* Click */
 
 .design-archives:active>h3, .design-archives:active>nav {
   visibility: visible;
+  -webkit-transition: all 0s;
   transition: all 0s;
 }
 
-/*Unclick*/
+/* Unclick */
 
 .page-wrapper:active .design-archives>h3, .page-wrapper:active .design-archives>nav {
+  -webkit-transition-property: none !important;
   transition-property: none !important;
 }
 
-/* Timer */
-
-/*pop-up paragraphs go flex container*/
+/* System tray item goes flex container */
 
 .zen-resources {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
   justify-content: flex-start;
-  /*default - starts containers from left*/
+  /* By default containers start from left */
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   max-width: 800px;
-  /* heigh property may need to be responsive */
+  /* Heigh property may need to be responsive */
   max-height: 200px;
-  /*center settings icon*/
+  /* Center settings icon */
   position: relative;
 }
 
-/*flex items styles*/
+/* System tray flex items styles */
 
-.zen-resources>h3, .zen-resources>ul {
+.zen-resources>h3, .zen-resources > ul/*, .zen-resources > li*/ {
   padding: .1em;
   margin: .05em;
   font-size: 1em;
-  background: black;
+  background: rgba(102, 153, 255, .95);
   color: white;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
   flex: 1;
   min-width: 200px;
   /*must have*/
+  -ms-flex-item-align: start;
   align-self: flex-start;
 }
 
-/* Icon background change */
+/* System tray icon background change */
 
 .zen-resources::before {
   background: black;
-  content: url("images/Timer1.png");
+  content: url("images/SystemTray1.png");
   visibility: visible;
 }
 
-/* gray on click */
-
 .zen-resources:hover::before {
-  content: url("images/Timer2.png");
+  content: url("images/SystemTray2.png");
 }
 
-/* Icon background change end*/
-
-/* before click/unclick effets are applied, all pop-up elements are moved */
+/* Before click/unclick effets are applied, all pop-up elements are moved */
 
 .zen-resources>h3, .zen-resources>ul {
-  transform: translate(0px, -160px);
+  -webkit-transform: translate(0px, -163px);
+  transform: translate(0px, -163px);
 }
 
-/*Click/Unclick effect*/
-
-/*include .page-wrapper(entire body) for click/unclick*/
+/* Click/Unclick effect */
+/* Include .page-wrapper(entire body) for click/unclick */
 
 .page-wrapper .zen-resources>h3, .page-wrapper .zen-resources>ul {
   color: white;
@@ -268,22 +289,22 @@
   transition: all 0s 1000s;
 }
 
-/* Icon */
-
-.zen-resources::before {
-  content: url("images/Timer1.png");
-  visibility: visible;
-}
-
-/*Click*/
+/* Click */
 
 .zen-resources:active>h3, .zen-resources:active>ul {
   visibility: visible;
+  -webkit-transition: all 0s;
   transition: all 0s;
 }
 
-/*Unclick*/
+/* Unclick */
 
 .page-wrapper:active .zen-resources>h3, .page-wrapper:active .zen-resources>ul {
+  -webkit-transition-property: none !important;
   transition-property: none !important;
+}
+
+/* Remove bullet circles from all unordered lists */
+ul {
+  list-style-type: none;
 }
