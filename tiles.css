@@ -100,8 +100,8 @@ footer {
 .explanation:before {
   -webkit-animation: slideAndFade1 8s .5s infinite ease-in-out forwards;
   animation: slideAndFade1 8s .5s infinite ease-in-out forwards;
-  background: -webkit-linear-gradient(top, rgba(204, 204, 0, 0.2), rgba(204, 204, 0, 0.6)), url("../Zengarden/images/explanationIcon.png"), no-repeat bottom;
-  background: linear-gradient(to bottom, rgba(204, 204, 0, 0.2), rgba(204, 204, 0, 0.6)), url("../Zengarden/images/explanationIcon.png"), no-repeat bottom;
+  background: -webkit-linear-gradient(top, rgba(204, 204, 0, 0.2), rgba(204, 204, 0, 0.6)), url('../ZenGardenCSS/images/explanationIcon.png'), no-repeat bottom;
+  background: linear-gradient(to bottom, rgba(204, 204, 0, 0.2), rgba(204, 204, 0, 0.6)), url('../ZenGardenCSS/images/explanationIcon.png'), no-repeat bottom;
   content: "Explanation";
   background-size: cover;
   position: absolute;
@@ -115,8 +115,8 @@ footer {
 .participation:before {
   -webkit-animation: slideAndFade2 18s 2s infinite ease-in-out forwards;
   animation: slideAndFade2 18s 2s infinite ease-in-out forwards;
-  background: -webkit-linear-gradient(top, rgba(0, 51, 204, 0.2), rgba(0, 51, 204, 0.6)), url("../Zengarden/images/participationIcon.png"), no-repeat bottom;
-  background: linear-gradient(to bottom, rgba(0, 51, 204, 0.2), rgba(0, 51, 204, 0.6)), url("../Zengarden/images/participationIcon.png"), no-repeat bottom;
+  background: -webkit-linear-gradient(top, rgba(0, 51, 204, 0.2), rgba(0, 51, 204, 0.6)), url('../ZenGardenCSS/images/participationIcon.png'), no-repeat bottom;
+  background: linear-gradient(to bottom, rgba(0, 51, 204, 0.2), rgba(0, 51, 204, 0.6)), url('../ZenGardenCSS/images/participationIcon.png'), no-repeat bottom;
   content: "Participation";
   background-size: cover;
   position: absolute;
@@ -129,8 +129,8 @@ footer {
 .benefits:before {
   -webkit-animation: slideAndFade3 18s .1s infinite ease-in-out forwards;
   animation: slideAndFade3 18s .1s infinite ease-in-out forwards;
-  background: -webkit-linear-gradient(top, rgba(255, 0, 0, 0.2), rgba(255, 0, 0, 0.6)), url("../Zengarden/images/storeIcon.png"), no-repeat bottom;
-  background: linear-gradient(to bottom, rgba(255, 0, 0, 0.2), rgba(255, 0, 0, 0.6)), url("../Zengarden/images/storeIcon.png"), no-repeat bottom;
+  background: -webkit-linear-gradient(top, rgba(255, 0, 0, 0.2), rgba(255, 0, 0, 0.6)), url("../ZenGardenCSS/images/storeIcon.png"), no-repeat bottom;
+  background: linear-gradient(to bottom, rgba(255, 0, 0, 0.2), rgba(255, 0, 0, 0.6)), url("../ZenGardenCSS/images/storeIcon.png"), no-repeat bottom;
   content: "Benefits";
   background-size: cover;
   position: absolute;
@@ -143,8 +143,8 @@ footer {
 .requirements:before {
   -webkit-animation: slideAndFade4 20s 2.5s infinite ease-in-out forwards;
   animation: slideAndFade4 20s 2.5s infinite ease-in-out forwards;
-  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6)), url("../Zengarden/images/requirementsIcon2.png"), no-repeat bottom;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6)), url("../Zengarden/images/requirementsIcon2.png"), no-repeat bottom;
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6)), url("../ZenGardenCSS/images/requirementsIcon2.png"), no-repeat bottom;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6)), url("../ZenGardenCSS/images/requirementsIcon2.png"), no-repeat bottom;
   content: "Requirements";
   content: "Requirements";
   background-size: cover;
@@ -158,8 +158,8 @@ footer {
 footer:before {
   -webkit-animation: slideAndFade5 10s 5s infinite ease-in forwards;
   animation: slideAndFade5 10s 5s infinite ease-in forwards;
-  background: -webkit-linear-gradient(top, rgba(255, 100, 0, 0.2), rgba(255, 100, 0, 0.6)), url("../Zengarden/images/sourcesIcon.png"), no-repeat bottom;
-  background: linear-gradient(to bottom, rgba(255, 100, 0, 0.2), rgba(255, 100, 0, 0.6)), url("../Zengarden/images/sourcesIcon.png"), no-repeat bottom;
+  background: -webkit-linear-gradient(top, rgba(255, 100, 0, 0.2), rgba(255, 100, 0, 0.6)), url("../ZenGardenCSS/images/sourcesIcon.png"), no-repeat bottom;
+  background: linear-gradient(to bottom, rgba(255, 100, 0, 0.2), rgba(255, 100, 0, 0.6)), url("../ZenGardenCSS/images/sourcesIcon.png"), no-repeat bottom;
   content: "Sources";
   background-size: cover;
   position: absolute;
@@ -182,7 +182,7 @@ footer:before {
     transform: translateY(0);
   }
   95% {
-    content: url("../Zengarden/images/face2.png");
+    content: url("../ZenGardenCSS/images/face2.png");
     text-align: center;
     top: auto;
   }
@@ -202,7 +202,7 @@ footer:before {
     transform: translateY(0);
   }
   95% {
-    content: url("../Zengarden/images/face2.png");
+    content: url("../ZenGardenCSS/images/face2.png");
     text-align: center;
     top: auto;
   }
@@ -222,7 +222,7 @@ footer:before {
     transform: translateY(0);
   }
   95% {
-    content: url("../Zengarden/images/face1.png");
+    content: url("../ZenGardenCSS/images/face1.png");
     text-align: center;
     top: auto;
   }
@@ -241,7 +241,7 @@ footer:before {
     transform: translateY(0);
   }
   95% {
-    content: url("../Zengarden/images/face1.png");
+    content: url("../ZenGardenCSS/images/face1.png");
     text-align: center;
     top: auto;
   }
@@ -261,7 +261,7 @@ footer:before {
     transform: translateY(0);
   }
   95% {
-    content: url("../Zengarden/images/face5.png");
+    content: url("../ZenGardenCSS/images/face5.png");
     text-align: center;
     top: auto;
   }
@@ -280,7 +280,7 @@ footer:before {
     transform: translateY(0);
   }
   95% {
-    content: url("../Zengarden/images/face5.png");
+    content: url("../ZenGardenCSS/images/face5.png");
     text-align: center;
     top: auto;
   }
@@ -300,7 +300,7 @@ footer:before {
     transform: translateY(0);
   }
   95% {
-    content: url("../Zengarden/images/face7.png");
+    content: url("../ZenGardenCSS/images/face7.png");
     text-align: center;
     top: auto;
   }
@@ -319,7 +319,7 @@ footer:before {
     transform: translateY(0);
   }
   95% {
-    content: url("../Zengarden/images/face7.png");
+    content: url("../ZenGardenCSS/images/face7.png");
     text-align: center;
     top: auto;
   }
@@ -338,7 +338,7 @@ footer:before {
     transform: translateY(0);
   }
   95% {
-    content: url("../Zengarden/images/face6.png");
+    content: url("../ZenGardenCSS/images/face6.png");
     text-align: center;
     top: auto;
   }
@@ -357,7 +357,7 @@ footer:before {
     transform: translateY(0);
   }
   95% {
-    content: url("../Zengarden/images/face6.png");
+    content: url("../ZenGardenCSS/images/face6.png");
     text-align: center;
     top: auto;
   }
