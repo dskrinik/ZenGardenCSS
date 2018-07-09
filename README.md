@@ -4,7 +4,7 @@ An existing HTML code is provided at the CssZenGarden.com. This code is not to b
 
 ![tiles](https://user-images.githubusercontent.com/25467804/42470336-1f83ddf2-8388-11e8-9924-fd829aad3f1d.png)
 
-The objective includes mimicking the metro tiles, the animations of the tiles, the sidebar with its buttons, and the taskbar with the start button. The objective was get as close as it’s technically possible to the look, feel, and the functionality of the Microsoft tablet screen.
+The objective includes mimicking the metro tiles, the animations of the tiles, the sidebar with its buttons, and the taskbar with the start button.
 Here are screenshots of before and after:
 
 ![comarison1](https://user-images.githubusercontent.com/25467804/42391537-b991de34-811d-11e8-844f-fd5e0bd0cf74.png)
