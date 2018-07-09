@@ -5,6 +5,10 @@ Here are screenshots of before and after:
 
 ![comarison1](https://user-images.githubusercontent.com/25467804/42391537-b991de34-811d-11e8-844f-fd5e0bd0cf74.png)
 
-Here is a quick demo of interacting with the site:
+Here is a demo of interacting with the site on a desktop:
 
 ![demo1](https://user-images.githubusercontent.com/25467804/42414727-7b741c56-8209-11e8-9ebd-1d782d28ea5e.gif)
+
+Here is a demo of interacting with the site on a tablet:
+
+![demo2](https://user-images.githubusercontent.com/25467804/42465930-6d45326e-837b-11e8-92a5-0575ced5856b.gif)
